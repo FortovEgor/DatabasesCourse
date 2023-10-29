@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  postgres-master-library:
+    image: postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=fortov_214
+      - POSTGRES_USER=fortov_214
+      - POSTGRES_PASSWORD=fortov_214
+    volumes:
+      - .\docker\db\scripts\library.sql:/docker-entrypoint-initdb.d/library.sql
+  postgres-master-trains:
+    image: postgres
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_DB=fortov_214
+      - POSTGRES_USER=fortov_214
+      - POSTGRES_PASSWORD=fortov_214
+    volumes:
+      - .\docker\db\scripts\trains.sql:/docker-entrypoint-initdb.d/trains.sql
+  postgres-master-hospital:
+    image: postgres
+    ports:
+      - "5434:5432"
+    environment:
+      - POSTGRES_DB=fortov_214
+      - POSTGRES_USER=fortov_214
+      - POSTGRES_PASSWORD=fortov_214
+    volumes:
+      - .\docker\db\scripts\hospital.sql:/docker-entrypoint-initdb.d/hospital.sql
