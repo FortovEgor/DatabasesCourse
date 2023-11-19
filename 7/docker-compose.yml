@@ -1,0 +1,11 @@
+version: '3'
+services:
+  database:
+    image: postgres
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=fortov_egor_214
+      - POSTGRES_PASSWORD=fortov_egor_214
+      - POSTGRES_DB=fortov_egor_214
+
